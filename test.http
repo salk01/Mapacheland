@@ -1,0 +1,18 @@
+GET http://localhost:8000/foto
+
+###
+
+GET http://localhost:8080/test/index?name=mapachon
+
+###
+
+GET http://localhost:8080/test/mapache?name=mapachon
+
+
+###
+
+GET http://localhost:8080/test/mapache/all
+
+
+
+

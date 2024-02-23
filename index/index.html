@@ -1,0 +1,184 @@
+<html>
+<head>
+  <style>
+    body{
+        background-image: linear-gradient(45deg, blue 10%, black 50%, blue 100%);
+    }
+    /*header style*/
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    /*navigation menu style*/
+    nav {
+      text-align: center;
+      word-spacing: 30px;
+      padding: 10px;
+      background-color: blue;
+      color: antiquewhite;
+    }
+    /*creating the two-column layout*/
+    * {
+      box-sizing: border-box;
+      font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+      color: azure;
+    }
+    img{
+        border-radius: 10px;
+    }
+    /*contenedor principal flex direction row para generar tres columnas*/
+    .row {
+      display: flex;
+      flex-direction: row ;
+    }
+    .post-text-box {
+      flex: 70%;
+      padding: 20px;
+      background-image: linear-gradient(100deg, blue 10%, black 50%, black 100%)
+    }
+    .post-text-box2 {
+      flex: 70%;
+      padding: 20px;
+      background-image: linear-gradient(100deg,  black 50%, black 50%, blue 100%)
+    }
+    .profile {
+      flex: 30%;
+      padding: 20px;
+      background-image: linear-gradient(45deg, black 10%, black 50%, blue 100%)
+    }
+    /*profile image and heading style*/
+    .profile img {
+      width: 120px;
+      height: 120px;
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .profile h1 {
+      text-align: center;
+    }
+    .profile p{
+      text-align: center;
+    }
+    figure{
+        margin-bottom: 50px ;
+        margin-top: 50px ;
+        text-align: center;
+    }
+    figure img{
+        width: 500px;
+        height: 500px;
+        transition: transform 0.2s;
+        box-shadow: 5px 5px 10px black;
+        margin: auto;
+        
+    }
+    figure img:hover{
+        transform: scale(1.5);
+        box-shadow: 10px 10px 20px 5px black;
+    }
+    figure figcaption{
+        margin-bottom: 20px ;
+        margin-top: 20px ;
+        text-align: center;
+    }
+    .post-text-box{
+    }
+    .leftArticle{
+      border: 2px solid grey;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      background-color: blue;
+    }
+    .leftArticle h2{
+      text-align: center;
+    }
+    .leftArticle div{
+      text-align: center;
+    }
+    .leftArticle:hover{
+      transform: scale(1.1);
+      transition: transform 0.2s;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>MAPACHELAND</h1>
+    <script type="module">
+      const res = await fetch('http://localhost:8080/test/mapache?name=mapachon')
+        .then(res => res.json())
+      const img = document.getElementById('img')
+      img.src = res
+
+      const resAll = await fetch('http://localhost:8080/test/mapache/all')
+        .then(res => res.json())
+        .then(mapas => {
+          const html = mapas.map(mapa => {
+            return `
+                <h2>${mapa.name}</h2>
+                <p>${mapa.acc}</p>
+                <figure>
+                  <img src="${mapa.img}" alt="${mapa.name}">
+                  <figcaption>Soy un mapache y me gusta rascarme el culo</figcaption>
+                </figure>
+            `
+          }).join('')
+          document.getElementById('mapas').innerHTML = html
+          document.getElementById('mapas2').innerHTML = html
+        })
+
+    </script>
+  </header>
+  <nav>
+    <a href="#">Inicio</a>
+    <a href="#">Sobre mí</a>
+    <a href="#">Contacto</a>
+  </nav>
+  <div class="row">
+    <div class="profile">
+      <img src="" alt="Mi foto" id="img"/>
+      <h1>El Mapache</h1>
+      <p>Soy un aficionado a la fotografía y me gusta compartir mis imágenes con el mundo.</p>
+      <section>
+        <article class="leftArticle">
+          <h2>La primera vez que salte en un cubo de la basura</h2>
+          <p>Haz click en el link de abajo para saber mas></p>
+          <div>
+            <a href="#">AQUI¡¡¡</a>
+          </div>
+        </article>
+        <article class="leftArticle">
+          <h2>La segunda vez que salte en un cubo de la basura</h2>
+          <p>Haz click en el link de abajo para saber mas></p>
+          <div>
+            <a href="#">AQUI¡¡¡</a>
+          </div>
+        </article>
+        <article class="leftArticle">
+          <h2>La tercera vez que salte en un cubo de la basura</h2>
+          <p>Haz click en el link de abajo para saber mas></p>
+          <div>
+            <a href="#">AQUI¡¡¡</a>
+          </div>
+        </article>
+      </section>
+    </div>
+    <section class="post-text-box">
+      <h2>Un día en el parque</h2>
+          <p>El pasado fin de semana fui al parque con mi familia y aproveché para tomar algunas fotos. Aquí os dejo una selección de las que más me gustaron.</p>
+      <div id="mapas" style="text-align: center;">
+      </div>
+    </section>
+    <section class="post-text-box">
+      <h2>Un día en el parque</h2>
+      <p>El pasado fin de semana fui al parque con mi familia y aproveché para tomar algunas fotos. Aquí os dejo una selección de las que más me gustaron.</p>
+      <div id="mapas2" style="text-align: center;">
+      </div>
+    </section>
+  </div>
+  <footer>
+    <p>Todos los derechos reservados © 2024</p>
+  </footer>
+</body>
+</html>
