@@ -1,0 +1,23 @@
+
+[
+  {
+    "name": "mapachicle",
+    "acc": "correr",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUuwjZ5hBGCR1siSG8S7CAoH2Y4fLh-FXVpA&usqp=CAU"
+  },
+  {
+    "name": "mapachon",
+    "acc": "comiendo",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTdI0OKI4ASHy4tocd5lCZFSCNqTl70wbvn6A&usqp=CAU"
+  },
+  {
+    "name": "mapa",
+    "acc": "comiendo",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCgzFLIJU8to2C5NJFhx8jObb1duWNWoNzEw&usqp=CAU"
+  },
+  {
+    "name": "mapachete",
+    "acc": "comiendo",
+    "img": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCgzFLIJU8to2C5NJFhx8jObb1duWNWoNzEw&usqp=CAU"
+  }
+]
