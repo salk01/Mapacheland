@@ -10,7 +10,7 @@ const cors = require('cors')
 
 const mapache = require('./index/resources/mapache.json');
 const app = express();
-const PORT = 8080;
+const PORT = 3000;
 //const mySchema = z.string();
 
 //path.basename = "index/"
@@ -21,12 +21,22 @@ app.use(bodyParser.json());
 
 app.use(cors())
 app.use((req, res, next) => {
-  //allow access to current url. work for https as well
-  res.setHeader('Access-Control-Allow-Origin',req.header('Origin'));
-  res.removeHeader('x-powered-by');
-  //allow access to current method
-  res.setHeader('Access-Control-Allow-Methods',req.method);
-  res.setHeader('Access-Control-Allow-Headers','Content-Type');
+    origin: (origin, callback) => {
+      const ACCEPTED_ORIGINS = [
+        'http://localhost:3000',
+      ]
+      
+      
+      if (ACCEPTED_ORIGINS.includes(origin)) {
+        return callback(null, true)
+      }
+  
+      if (!origin) {
+        return callback(null, true)
+      }
+  
+      return callback(new Error('Not allowed by CORS'))
+    }
   next();
 })
 //favicon icon

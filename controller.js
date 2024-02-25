@@ -2,17 +2,30 @@ const express = require('express')
 const actions = require('./model.js')
 const path = require('path')
 
+
+//promise + async
 const getMapa = async (req, res) => {
     const mapa = req.query
     const mapas = await actions.actionMapa( mapa.name )
-    if(mapas == undefined) res.json("no existe")
-    res.json(mapas.img)
+        .then((mapas)=>{
+            res.json(mapas.img)
+        })
+        .catch((err)=>{
+            res.json("no existe el mapa")
+        })
+           
 }
-
+//promise + async
 const getMapas = async (req, res) => {
     const mapas = await actions.actionMapas()
-    console.log(mapas)
-    res.json(mapas)
+        .then((mapas)=>{
+            console.log(mapas)
+            res.json(mapas)
+        })
+        .catch((err)=>{
+            res.json("no se devuelven mapas")
+        })
+ 
 }
 
 const sendHtml = async (req, res) => {

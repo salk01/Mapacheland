@@ -8,15 +8,15 @@ app.use(bodyParser.json());
 
 
 const actionMapa = async (nameFilter) => {
-    const mapache = mapaches.find(y => y.name === nameFilter)
+    const mapache = await mapaches.find(y => y.name === nameFilter)
     return mapache
 }
 
 const actionMapas = async () => {
-    return mapaches
+    return await mapaches
 }
 
-const test = async () => {
+const test = () => {
    console.log("que pasa")
 }
 

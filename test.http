@@ -1,17 +1,17 @@
-GET http://localhost:8000/foto
+GET http://localhost:3000/foto
 
 ###
 
-GET http://localhost:8080/test/index?name=mapachon
+GET http://localhost:3000/test/index?name=mapachon
 
 ###
 
-GET http://localhost:8080/test/mapache?name=mapachon
+GET http://localhost:3000/test/mapache?name=mapachon
 
 
 ###
 
-GET http://localhost:8080/test/mapache/all
+GET http://localhost:3000/test/mapache/all
 
 
 
