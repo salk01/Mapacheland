@@ -27,6 +27,19 @@ const getMapas = async (req, res) => {
         })
  
 }
+///home/ubuntu/Documents/work/Mapacheland/index/Info.html
+const getInfo = async (req, res) => {
+    const info = res.sendFile (path.join(__dirname, './index/Info.html'), function (err) {
+        if(err){
+            console.error(err);
+        } else {
+            console.log(__dirname + '/index/Info.html');
+        }
+    });
+    
+        
+ 
+}
 
 const sendHtml = async (req, res) => {
     const image = req.query.name;
@@ -40,5 +53,6 @@ const sendHtml = async (req, res) => {
 module.exports = {
     getMapa,
     sendHtml,
-    getMapas
+    getMapas,
+    getInfo
 }

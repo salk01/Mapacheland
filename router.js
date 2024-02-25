@@ -3,6 +3,7 @@ const app = express();
 const router = express.Router()
 const getMapa = require('./controller.js');
 
+
 router.use((req, res, next) => {
     console.log('Time: ', Date.now())
     next()
@@ -24,5 +25,10 @@ router.get('/durmiendo', (req, res)=>{
 router.get('/mapache', getMapa.getMapa)
 
 router.get('/mapache/all', getMapa.getMapas)
+
+router.get('/mapache/info', getMapa.getInfo)
+
+//favicon icon
+//app.use(favicon(path.join(__dirname,'index/resources','favicon','favicon.png')));
 
 module.exports = router

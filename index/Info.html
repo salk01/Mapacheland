@@ -106,33 +106,10 @@
 <body>
   <header>
     <h1>MAPACHELAND</h1>
-    <script type="module">
-      const res = await fetch('http://localhost:3000/test/mapache?name=mapachon')
-        .then(res => res.json())
-      const img = document.getElementById('img')
-      img.src = res
-
-      const resAll = await fetch('http://localhost:3000/test/mapache/all')
-        .then(res => res.json())
-        .then(mapas => {
-          const html = mapas.map(mapa => {
-            return `
-                <h2>${mapa.name}</h2>
-                <p>${mapa.acc}</p>
-                <figure>
-                  <img src="${mapa.img}" alt="${mapa.name}">
-                  <figcaption>Soy un mapache y me gusta rascarme el culo</figcaption>
-                </figure>
-            `
-          }).join('')
-          document.getElementById('mapas').innerHTML = html
-        })
-
-    </script>
   </header>
   <nav>
     <a href="#">Inicio</a>
-    <a href="http://localhost:3000/test/mapache/info">Sobre mí</a>
+    <a href="./index/info.html">Sobre mí</a>
     <a href="#">Contacto</a>
   </nav>
   <div class="row">
@@ -165,10 +142,22 @@
       </section>
     </div>
     <section class="post-text-box">
-      <h2>Un día en el parque</h2>
-          <p>El pasado fin de semana fui al parque con mi familia y aproveché para tomar algunas fotos. Aquí os dejo una selección de las que más me gustaron.</p>
-      <div id="mapas" style="text-align: center;">
-      </div>
+     <p>
+        Los derechos de autor
+        son la voz de los creadores
+        que expresan su talento
+        y reclaman su reconocimiento.
+
+        Los derechos de autor
+        son la fuerza de los innovadores
+        que aportan su conocimiento
+        y generan su rendimiento.
+
+        Los derechos de autor
+        son el fruto de los trabajadores
+        que invierten su tiempo
+        y merecen su beneficio.
+     </p>
     </section>
   </div>
   <footer>

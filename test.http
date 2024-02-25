@@ -14,5 +14,10 @@ GET http://localhost:3000/test/mapache?name=mapachon
 GET http://localhost:3000/test/mapache/all
 
 
+###
+
+GET http://localhost:3000/test/mapache/info
+
+
 
 

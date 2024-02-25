@@ -1,7 +1,7 @@
 const express = require('express');
 //const moongose = requiere('moongose');
 const bodyParser = require('body-parser');
-const favicon = require('serve-favicon');
+//const favicon = require('serve-favicon');
 const path = require('path');
 const { METHODS } = require('http');
 const acciones = require('./router.js')
@@ -39,9 +39,6 @@ app.use((req, res, next) => {
     }
   next();
 })
-//favicon icon
-app.use(favicon(path.join(__dirname,'index/resources','favicon','favicon.png')));
-
 
 app.get('/index', (req, res)=>{
 	
